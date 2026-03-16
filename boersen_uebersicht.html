@@ -1,0 +1,263 @@
+﻿<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Börsen Übersicht</title>
+  <style>
+    :root {
+      --bg: #0a0f1e;
+      --bg2: #121a2f;
+      --card: #11192d;
+      --text: #e5ecff;
+      --muted: #9ea9c7;
+      --line: #23304f;
+      --accent: #5b8cff;
+    }
+
+    html { color-scheme: dark; background: #0a0f1e; }`r`n    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 15% 20%, #1a2750 0%, transparent 35%),
+        radial-gradient(circle at 85% 5%, #1a3d5f 0%, transparent 30%),
+        linear-gradient(145deg, var(--bg) 0%, var(--bg2) 100%);
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 1300px;
+      margin: 24px auto;
+      padding: 0 14px 28px;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: clamp(1.3rem, 2.1vw, 2rem);
+      color: #f2f6ff;
+      letter-spacing: 0.2px;
+    }
+
+    .meta {
+      color: var(--muted);
+      margin-bottom: 14px;
+      font-size: 0.95rem;
+    }
+
+    .card {
+      background: linear-gradient(180deg, #121d35 0%, #10182c 100%);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+      margin-bottom: 14px;
+    }
+
+    .grid {
+      display: grid;
+      gap: 14px;
+      grid-template-columns: 1fr;
+    }
+
+    @media (min-width: 980px) {
+      .grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    .panel-title {
+      margin: 0 0 8px;
+      font-size: 1rem;
+      color: #d9e4ff;
+    }
+
+    .hint {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-top: 6px;
+    }
+
+    .tv-wrap {
+      min-height: 430px;
+    }
+
+    .tv-box {
+      height: 100%;
+      width: 100%;
+    }
+
+    .tv-widget {
+      height: calc(100% - 32px);
+      width: 100%;
+    }
+
+    @media (max-width: 979px) {
+      .container {
+        margin: 14px auto;
+      }
+
+      .card {
+        padding: 10px;
+      }
+
+      .tv-wrap {
+        min-height: 620px;
+      }
+
+      .tv-widget {
+        height: calc(100% - 28px);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .tv-wrap {
+        min-height: 760px;
+      }
+    }
+
+    .topbar {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 10px;
+      font-size: 0.88rem;
+      color: #b6c4e6;
+      background: rgba(91, 140, 255, 0.12);
+      border: 1px solid rgba(91, 140, 255, 0.35);
+      border-radius: 999px;
+      padding: 6px 10px;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #2ad386;
+      box-shadow: 0 0 10px rgba(42, 211, 134, 0.9);
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <div class="topbar"><span class="dot"></span> Dark Mode aktiv</div>
+    <h1>Börsen Übersicht: Wichtige Aktien + Altcoins</h1>
+    <div class="meta">Live-Daten in EUR-Listings/Pairs (wo verfügbar) über TradingView. Wenn nichts erscheint, kurz neu laden (F5).</div>
+
+    <section class="card">
+      <h2 class="panel-title">Schnellüberblick</h2>
+      <div class="tradingview-widget-container">
+        <div class="tradingview-widget-container__widget"></div>
+        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+        {
+          "symbols": [
+            { "description": "LTC Properties", "proName": "NYSE:LTC" },
+            { "description": "Aixtron", "proName": "XETR:AIXA" },
+            { "description": "Apple", "proName": "TRADEGATE:AAPL" },
+            { "description": "Microsoft", "proName": "TRADEGATE:MSFT" },
+            { "description": "NVIDIA", "proName": "TRADEGATE:NVDA" },
+            { "description": "Amazon", "proName": "TRADEGATE:AMZN" },
+            { "description": "Alphabet", "proName": "TRADEGATE:GOOGL" },
+            { "description": "Meta", "proName": "TRADEGATE:META" },
+            { "description": "Tesla", "proName": "TRADEGATE:TSLA" },
+            { "description": "ETH", "proName": "BINANCE:ETHEUR" },
+            { "description": "SOL", "proName": "BINANCE:SOLEUR" },
+            { "description": "XRP", "proName": "BINANCE:XRPEUR" }
+          ],
+          "showSymbolLogo": true,
+          "isTransparent": false,
+          "displayMode": "adaptive",
+          "colorTheme": "dark",
+          "backgroundColor": "#0f172a",
+          "locale": "de_DE"
+        }
+        </script>
+      </div>
+    </section>
+
+    <section class="grid">
+      <article class="card tv-wrap">
+        <h2 class="panel-title">Wichtige Aktien</h2>
+        <div class="tradingview-widget-container tv-box">
+          <div class="tradingview-widget-container__widget tv-widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-market-quotes.js" async>
+          {
+            "width": "100%",
+            "height": "100%",
+            "symbolsGroups": [
+              {
+                "name": "Aktien Watchlist",
+                "symbols": [
+                  {"name": "TRADEGATE:LTC", "displayName": "LTC Properties"},
+                  {"name": "XETR:AIXA", "displayName": "Aixtron"},
+                  {"name": "TRADEGATE:AAPL", "displayName": "Apple"},
+                  {"name": "TRADEGATE:MSFT", "displayName": "Microsoft"},
+                  {"name": "TRADEGATE:NVDA", "displayName": "NVIDIA"},
+                  {"name": "TRADEGATE:AMZN", "displayName": "Amazon"},
+                  {"name": "TRADEGATE:GOOGL", "displayName": "Alphabet"},
+                  {"name": "TRADEGATE:META", "displayName": "Meta"},
+                  {"name": "TRADEGATE:TSLA", "displayName": "Tesla"},
+                  {"name": "TRADEGATE:BRK-B", "displayName": "Berkshire B"},
+                  {"name": "TRADEGATE:JPM", "displayName": "JPMorgan"},
+                  {"name": "TRADEGATE:LLY", "displayName": "Eli Lilly"}
+                ]
+              }
+            ],
+            "showSymbolLogo": true,
+            "isTransparent": false,
+            "colorTheme": "dark",
+          "backgroundColor": "#0f172a",
+            "locale": "de_DE"
+          }
+          </script>
+        </div>
+      </article>
+
+      <article class="card tv-wrap">
+        <h2 class="panel-title">Altcoins</h2>
+        <div class="tradingview-widget-container tv-box">
+          <div class="tradingview-widget-container__widget tv-widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-market-quotes.js" async>
+          {
+            "width": "100%",
+            "height": "100%",
+            "symbolsGroups": [
+              {
+                "name": "Top Altcoins",
+                "symbols": [
+                  {"name": "BINANCE:ETHEUR", "displayName": "ETH"},
+                  {"name": "BINANCE:BNBEUR", "displayName": "BNB"},
+                  {"name": "BINANCE:SOLEUR", "displayName": "SOL"},
+                  {"name": "BINANCE:XRPEUR", "displayName": "XRP"},
+                  {"name": "BINANCE:ADAEUR", "displayName": "ADA"},
+                  {"name": "BINANCE:DOGEEUR", "displayName": "DOGE"},
+                  {"name": "BINANCE:AVAXEUR", "displayName": "AVAX"},
+                  {"name": "BINANCE:DOTEUR", "displayName": "DOT"},
+                  {"name": "BINANCE:LINKEUR", "displayName": "LINK"},
+                  {"name": "BINANCE:MATICEUR", "displayName": "MATIC"}
+                ]
+              }
+            ],
+            "showSymbolLogo": true,
+            "isTransparent": false,
+            "colorTheme": "dark",
+          "backgroundColor": "#0f172a",
+            "locale": "de_DE"
+          }
+          </script>
+        </div>
+      </article>
+    </section>
+
+    <div class="hint">Hinweis: Die Seite braucht Internetzugang, da die Live-Feeds von TradingView geladen werden.</div>
+  </main>
+</body>
+</html>
+
+
+
+
+
+
