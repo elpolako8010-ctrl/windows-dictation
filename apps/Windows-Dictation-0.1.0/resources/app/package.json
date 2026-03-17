@@ -1,0 +1,9 @@
+﻿{
+  "name": "windows-dictation",
+  "version": "0.1.0",
+  "description": "German-friendly push-to-talk Windows dictation app using Groq Whisper.",
+  "main": "main.js",
+  "author": "OpenClaw",
+  "license": "MIT",
+  "dependencies": {}
+}

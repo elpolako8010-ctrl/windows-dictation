@@ -1,0 +1,40 @@
+# OS / editor
+Thumbs.db
+Desktop.ini
+*.log
+*.tmp
+
+# Local helper/test folders
+_appdata/
+electron-test/
+pico-userdata/
+tools/
+apps/*-tar/
+
+# Portable app runtime data
+apps/Windows-Dictation-0.1.0/WindowsDictationData/
+
+# Temporary unpacked/backup artifacts
+apps/Windows-Dictation-0.1.0/resources/app.asar.extracted/
+apps/Windows-Dictation-0.1.0/resources/app.asar.disabled.*
+apps/Windows-Dictation-0.1.0/resources/app.asar.bak.*
+apps/Windows-Dictation-0.1.0/resources/app.asar.original.*
+apps/Windows-Dictation-0.1.0/resources/app.asar.patched
+apps/Windows-Dictation-0.1.0/resources/app/*.bak
+apps/Windows-Dictation-0.1.0/resources/app/*.bak.*
+
+# Secrets
+apps/Windows-Dictation-0.1.0/WindowsDictationData/config.json
+.env
+.env.*
+# Packaged Windows app binaries
+apps/Windows-Dictation-0.1.0/*.exe
+apps/Windows-Dictation-0.1.0/*.dll
+apps/Windows-Dictation-0.1.0/*.pak
+apps/Windows-Dictation-0.1.0/snapshot_blob.bin
+apps/Windows-Dictation-0.1.0/v8_context_snapshot.bin
+apps/Windows-Dictation-0.1.0/vk_swiftshader*
+apps/Windows-Dictation-0.1.0/vulkan-1.dll
+apps/Windows-Dictation-0.1.0/locales/
+apps/Windows-Dictation-0.1.0/LICENSE.electron.txt
+apps/Windows-Dictation-0.1.0/LICENSES.chromium.html

@@ -1,0 +1,75 @@
+﻿<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src https://api.groq.com;" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Windows Dictation</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-tone="idle">
+    <main class="app-shell">
+      <section class="hero card">
+        <div class="badge">Windows Dictation</div>
+        <h1>Push-to-Talk Diktat für Windows</h1>
+        <p class="subtitle">Einfach Hotkey drücken, sprechen, loslassen – der Text landet direkt im aktiven Programm.</p>
+        <div class="status-pill">
+          <span class="dot"></span>
+          <div>
+            <strong id="status">Bereit</strong>
+            <div id="detail">Drücke F8, um die Aufnahme zu starten.</div>
+          </div>
+        </div>
+        <button id="toggle-btn" class="primary-btn">Aufnahme starten</button>
+      </section>
+
+      <section class="card">
+        <h2>Einstellungen</h2>
+        <label class="field">
+          <span>Groq API-Schlüssel</span>
+          <input id="api-key" type="password" placeholder="API key" />
+        </label>
+        <p class="help-text">Den Schlüssel bekommst du hier: <a href="#" id="groq-link">console.groq.com/keys</a></p>
+
+        <label class="field">
+          <span>Globaler Hotkey</span>
+          <input id="hotkey" type="text" placeholder="F8" />
+        </label>
+        <p class="help-text">Beispiele: <code>F8</code>, <code>F9</code>, <code>Alt+Space</code></p>
+
+        <label class="checkbox-row">
+          <input id="auto-paste" type="checkbox" checked />
+          <span>Text automatisch in die aktive App einfügen</span>
+        </label>
+
+        <label class="checkbox-row">
+          <input id="close-to-tray" type="checkbox" checked />
+          <span>Beim Schließen/Minimieren im Hintergrund weiterlaufen</span>
+        </label>
+
+        <button id="save-btn" class="secondary-btn">Einstellungen speichern</button>
+      </section>
+
+      <section class="card">
+        <h2>Zuletzt erkannt</h2>
+        <textarea id="result" readonly placeholder="Hier erscheint die letzte Transkription."></textarea>
+        <p id="last-action" class="help-text">Noch nichts transkribiert.</p>
+      </section>
+
+      <section class="card compact">
+        <h2>So benutzt du es</h2>
+        <ol>
+          <li>Windows Dictation starten</li>
+          <li>Einmal den Groq-Schlüssel eintragen und speichern</li>
+          <li>In Word, Mail oder Chat-Fenster klicken</li>
+          <li><strong>F8 drücken</strong>, sprechen, wieder <strong>F8 drücken</strong></li>
+          <li>Der Text wird eingefügt – oder wenigstens in die Zwischenablage kopiert</li>
+        </ol>
+      </section>
+    </main>
+
+    <script src="renderer.js"></script>
+  </body>
+</html>
+
+
